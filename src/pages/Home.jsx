@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import "../style/button.scss";
+import { BsFillCloudDrizzleFill, BsFillCloudSnowFill } from "react-icons/bs";
+import { MdOutlineWbSunny } from "react-icons/md";
+import { AiFillCloud } from "react-icons/ai";
 function Home() {
-  const [register, setRegister] = useState(false);
+  const [register, setRegister] = useState(true);
   return (
     <div className="home">
       <div
@@ -15,6 +18,7 @@ function Home() {
             <button className="button">Search</button>
           </div>
         </div>
+
         <div className="latest">
           <div> İstanbul</div>
           <div> Adana</div>
@@ -22,8 +26,13 @@ function Home() {
         </div>
 
         <div className="location"> Adana</div>
+
         <div className="derece"> 38.9° C</div>
-        <div className="hava"> Cloudy</div>
+
+        <div className="hava">
+          <BsFillCloudDrizzleFill size={50} color="white" />
+          <div> Rainy</div>
+        </div>
         <div>
           <button
             className="cssbuttons-io-button"
@@ -48,7 +57,53 @@ function Home() {
         </div>
       </div>
 
-      <div className="box2">flex2</div>
+      <div className="box2">
+        <div className="detailwrapper">
+          <div className="detail">
+            PRECIPITATION : <div>0%</div>
+          </div>
+          <div className="detail">
+            HUMIDITY : <div>34%</div>
+          </div>
+          <div className="detail">
+            WIND: <div>12 km/h</div>
+          </div>
+        </div>
+
+        <div className="dayswrapper">
+          <div className="days">
+            <div>
+              <MdOutlineWbSunny size={50} />
+            </div>
+            <div>Tue </div>
+            <div>18°C </div>
+          </div>
+
+          <div className="days">
+            <div>
+              <AiFillCloud size={50} />
+            </div>
+            <div>Wed </div>
+            <div>25°C </div>
+          </div>
+
+          <div className="days">
+            <div>
+              <BsFillCloudSnowFill size={50} />
+            </div>
+            <div>Thu </div>
+            <div>22°C </div>
+          </div>
+
+          <div className="days">
+            <div>
+              <BsFillCloudDrizzleFill size={50} />
+            </div>
+            <div>Fry </div>
+            <div>16°C </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
