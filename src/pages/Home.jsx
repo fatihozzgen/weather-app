@@ -1,37 +1,66 @@
-import React from "react";
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 import "../style/button.scss";
 import { BsFillCloudDrizzleFill, BsFillCloudSnowFill } from "react-icons/bs";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { AiFillCloud } from "react-icons/ai";
 function Home() {
   const [register, setRegister] = useState(true);
+  const [data, setData] = useState();
+  const [search, setSearch] = useState("istanbul");
+
+  const getData = async () => {
+    const { data } = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=c9b41855ce7ae49f15ba6d36fe905061&units=metric`
+    );
+    setData(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    getData();
+  };
+  console.log(search);
+
   return (
     <div className="home">
       <div
         className="box1"
         style={register ? { position: "absolute" } : { position: "relative" }}
       >
-        <div className="inputwrapper">
-          <input className="input" type="text" placeholder="Your City" />
+        <form className="inputwrapper">
+          <input
+            className="input"
+            type="text"
+            placeholder="Your City"
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <div className="buttonwrapper">
-            <button className="button">Search</button>
+            <button className="button" onClick={handleSearch}>
+              Search
+            </button>
           </div>
-        </div>
-
+        </form>
         <div className="latest">
-          <div> İstanbul</div>
+          <div onClick={() => getData()}> İstanbul</div>
           <div> Adana</div>
           <div> İzmir</div>
         </div>
 
-        <div className="location"> Adana</div>
-
-        <div className="derece"> 38.9° C</div>
-
+        <div className="location">{data?.name}</div>
+        <div className="derece">{Math.round(data?.main.temp)}°C</div>
         <div className="hava">
-          <BsFillCloudDrizzleFill size={50} color="white" />
-          <div> Rainy</div>
+          <img
+            src={`icons/${data?.weather[0].icon}.png`}
+            className="icon-small"
+            alt="weather"
+          />
+          {/* <BsFillCloudDrizzleFill size={50} color="white" /> */}
+          <div></div>
         </div>
         <div>
           <button
@@ -60,13 +89,16 @@ function Home() {
       <div className="box2">
         <div className="detailwrapper">
           <div className="detail">
-            PRECIPITATION : <div>0%</div>
+            Feels Like <div>{Math.round(data?.main.feels_like)} °C</div>
           </div>
           <div className="detail">
-            HUMIDITY : <div>34%</div>
+            Wind <div>{data?.wind.speed} km/h</div>
           </div>
           <div className="detail">
-            WIND: <div>12 km/h</div>
+            Humidity <div>{data?.main.humidity} %</div>
+          </div>
+          <div className="detail">
+            Pressure <div>{data?.main.pressure} mb</div>
           </div>
         </div>
 
@@ -78,7 +110,6 @@ function Home() {
             <div>Tue </div>
             <div>18°C </div>
           </div>
-
           <div className="days">
             <div>
               <AiFillCloud size={50} />
@@ -86,15 +117,14 @@ function Home() {
             <div>Wed </div>
             <div>25°C </div>
           </div>
-
           <div className="days">
             <div>
               <BsFillCloudSnowFill size={50} />
             </div>
+
             <div>Thu </div>
             <div>22°C </div>
           </div>
-
           <div className="days">
             <div>
               <BsFillCloudDrizzleFill size={50} />
