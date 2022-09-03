@@ -53,45 +53,44 @@
 .inputwrapper {
   display: flex;
   height: 50px;
-  border: 2px solid red;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 .input {
   height: 35px;
   width: 250px;
   outline: none;
-  // border: none;
+  border: none;
   padding-left: 15px;
   margin-right: 15px;
   border-radius: 5px;
   background-color: #353b48;
   color: whitesmoke;
-  border: 2px solid red;
 }
 
 .button {
   width: 70px;
   height: 35px;
   outline: none;
-  // border: none;
+  border: none;
   background-color: #353b48;
   border-radius: 5px;
   cursor: pointer;
   color: whitesmoke;
-  border: 2px solid red;
 }
 
 .location {
-  font-size: 50px;
+  font-size: 45px;
   margin-top: 40px;
   color: whitesmoke;
-  border: 1px solid red;
+  margin-right: 60px;
 }
 .derece {
-  font-size: 60px;
+  font-size: 55px;
   margin-top: 30px;
   margin-left: 10px;
   color: whitesmoke;
-  border: 2px solid red;
 }
 
 .hava {
@@ -101,17 +100,16 @@
   color: whitesmoke;
   display: flex;
   gap: 20px;
-  border: 2px solid red;
 }
 
 .latest {
   width: 90%;
   height: 50px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
-  border: 2px solid red;
 }
 
 .latest > div {
@@ -139,7 +137,6 @@
 }
 .days > div {
   margin-bottom: 5px;
-  border: 2px solid red;
 }
 
 .dayswrapper {
@@ -147,7 +144,6 @@
   justify-content: center;
   gap: 20px;
   margin-top: 150px;
-  border: 2px solid red;
 }
 
 .detailwrapper {
@@ -158,7 +154,6 @@
   flex-direction: column;
   row-gap: 20px;
   padding-right: 20px;
-  border: 2px solid red;
 }
 
 .detail {
@@ -166,5 +161,4 @@
   padding: 5px;
   justify-content: space-between;
   border-bottom: 3px solid rgb(63, 62, 62);
-  border: 2px solid red;
 }

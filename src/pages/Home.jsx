@@ -22,6 +22,8 @@ function Home() {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setSearch("");
+
     getData();
   };
   console.log(search);
@@ -37,6 +39,7 @@ function Home() {
             className="input"
             type="text"
             placeholder="Your City"
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
           <div className="buttonwrapper">
@@ -59,8 +62,6 @@ function Home() {
             className="icon-small"
             alt="weather"
           />
-          {/* <BsFillCloudDrizzleFill size={50} color="white" /> */}
-          <div></div>
         </div>
         <div>
           <button
