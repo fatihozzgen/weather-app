@@ -4,7 +4,7 @@
   padding-top: 50px;
   background-color: silver;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 55px);
   position: absolute;
 }
 
@@ -12,8 +12,9 @@
   width: 400px;
   height: 500px;
   background-color: whitesmoke;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 15px;
+  // border-top-left-radius: 15px;
+  // border-bottom-left-radius: 15px;
   padding: 10px;
   display: flex;
   align-items: center;

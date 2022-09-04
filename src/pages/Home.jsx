@@ -5,6 +5,7 @@ import { BsFillCloudDrizzleFill, BsFillCloudSnowFill } from "react-icons/bs";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { AiFillCloud } from "react-icons/ai";
 function Home() {
+  const [login, setLogin] = useState(true);
   const [register, setRegister] = useState(true);
   const [data, setData] = useState();
   const [search, setSearch] = useState("istanbul");

@@ -2,10 +2,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Navbar from "./pages/Navbar";
+import { useState } from "react";
 
 function App() {
+  const [login, setLogin] = useState(true);
+
+  if (login) {
+    return (
+      <>
+        <Navbar />
+        <Login setLogin={setLogin} />;
+      </>
+    );
+  }
+
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -13,7 +25,7 @@ function App() {
           <Route path="login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

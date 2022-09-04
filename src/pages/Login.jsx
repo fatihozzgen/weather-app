@@ -1,12 +1,39 @@
-import React from "react";
+import { useState } from "react";
 import "../style/login.scss";
 import { GrFacebook } from "react-icons/gr";
 import { FaTwitterSquare, FaUser } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsLinkedin } from "react-icons/bs";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function login() {
+const Login = ({ setLogin }) => {
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
+  const loginChange = (e) => {
+    if (username === "admin" && password === "admin") {
+      setLogin(false);
+      console.log("giriş başarılı");
+    } else {
+      e.preventDefault();
+      setUsername("");
+      setPassword("");
+      notify();
+    }
+  };
+
+  const notify = () =>
+    toast.warn("Hatalı giriş", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <div className="logwrapper">
       <div className="log1">
@@ -14,7 +41,13 @@ function login() {
         <p className="logweather">Weather Forecast</p>
         <form>
           <div className="username">
-            <input className="loginput" placeholder="Username" type="text" />
+            <input
+              value={username}
+              className="loginput"
+              placeholder="Username"
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
+            />
             <span className="inputicon">
               <FaUser size={16} />
             </span>
@@ -22,16 +55,20 @@ function login() {
 
           <div className="password">
             <input
+              value={password}
               className="loginput"
               placeholder="Password"
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
             ></input>
             <span className="inputicon">
               <RiLockPasswordLine size={16} />
             </span>
           </div>
 
-          <button className="logbutton">SIGN IN</button>
+          <button className="logbutton" onClick={loginChange}>
+            SIGN IN
+          </button>
           <p className="logaccount">
             Don't have an account? <span> Sign Up Now</span>
           </p>
@@ -41,6 +78,17 @@ function login() {
             <span className="logor">OR</span>
             <div className="line2" />
           </div>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </form>
 
         <p className="logcontinue">Continue with social media </p>
@@ -60,9 +108,9 @@ function login() {
         </div>
       </div>
 
-      <div className="log2">log2</div>
+      {/* <div className="log2">log2</div> */}
     </div>
   );
-}
+};
 
-export default login;
+export default Login;
