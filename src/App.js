@@ -2,8 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Navbar from "./pages/Navbar";
-import "./style/main.scss";
-import "./style/navbar.scss";
+
 function App() {
   return (
     <div>

@@ -18,6 +18,7 @@ function Home() {
 
   useEffect(() => {
     getData();
+    setSearch("");
   }, []);
 
   const handleSearch = (e) => {
@@ -26,7 +27,7 @@ function Home() {
 
     getData();
   };
-  console.log(search);
+  console.log();
 
   return (
     <div className="home">
@@ -62,6 +63,7 @@ function Home() {
             className="icon-small"
             alt="weather"
           />
+          <div> {data?.weather[0].main}</div>
         </div>
         <div>
           <button

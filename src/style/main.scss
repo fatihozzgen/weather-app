@@ -10,7 +10,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 55px);
   position: absolute;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 
 .home::after {
   content: "";
-  background: url("../img/rainy.jpg");
+  background: #d1ccc0;
   opacity: 0.8;
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@
 .box1 {
   width: 550px;
   height: 630px;
-  background-color: #2f3542;
+  background-color: #746c5e;
   display: flex;
   padding-top: 20px;
   border-radius: 20px;
@@ -42,14 +42,6 @@
   align-items: center;
 }
 
-.box2 {
-  width: 550px;
-  height: 598px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-  color: whitesmoke;
-}
 .inputwrapper {
   display: flex;
   height: 50px;
@@ -65,8 +57,12 @@
   padding-left: 15px;
   margin-right: 15px;
   border-radius: 5px;
-  background-color: #353b48;
-  color: whitesmoke;
+  background-color: #aaa69d;
+  color: black;
+}
+
+.input::placeholder {
+  color: black;
 }
 
 .button {
@@ -74,30 +70,30 @@
   height: 35px;
   outline: none;
   border: none;
-  background-color: #353b48;
+  background-color: #aaa69d;
   border-radius: 5px;
   cursor: pointer;
-  color: whitesmoke;
+  color: black;
 }
 
 .location {
   font-size: 45px;
   margin-top: 40px;
-  color: whitesmoke;
+  color: black;
   margin-right: 60px;
 }
 .derece {
   font-size: 55px;
   margin-top: 30px;
   margin-left: 10px;
-  color: whitesmoke;
+  color: black;
 }
 
 .hava {
   font-size: 30px;
   margin-top: 30px;
   margin-left: 200px;
-  color: whitesmoke;
+  color: black;
   display: flex;
   gap: 20px;
 }
@@ -120,45 +116,20 @@
   align-items: center;
   border-radius: 15px;
   cursor: pointer;
-  color: whitesmoke;
-  background-color: #353b48;
-  border: 1px solid silver;
+  color: black;
+  background-color: #aaa69d;
+  border: 1px solid #aaa69d;
 }
 
-.days {
-  width: 110px;
-  height: 165px;
-  border: 2px solid silver;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5px;
-}
-.days > div {
-  margin-bottom: 5px;
-}
-
-.dayswrapper {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 150px;
-}
-
-.detailwrapper {
-  font-weight: 600;
-  margin-top: 50px;
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  padding-right: 20px;
-}
-
-.detail {
-  display: flex;
-  padding: 5px;
-  justify-content: space-between;
-  border-bottom: 3px solid rgb(63, 62, 62);
-}
+// @media only screen and (max-width: 650px) {
+//   .box1 {
+//     width: 490px;
+//     height: 530px;
+//     background-color: #2f3542;
+//     display: flex;
+//     padding-top: 20px;
+//     border-radius: 20px;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }
