@@ -4,6 +4,9 @@
   background-color: #f79f1f;
   padding: 3px 20px 0px 20px;
   display: flex;
+  box-shadow: 0px 0px 7px -2px #000000;
+  z-index: 10;
+  position: relative;
 }
 
 .ppicon {
