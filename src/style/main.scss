@@ -19,7 +19,7 @@
 
 .home::after {
   content: "";
-  background: #d1ccc0;
+  background: #c8d6e5;
   opacity: 0.8;
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@
 .box1 {
   width: 550px;
   height: 630px;
-  background-color: #746c5e;
+  background: url("../img/cloud.jpg");
   display: flex;
   padding-top: 20px;
   border-radius: 20px;
@@ -57,7 +57,7 @@
   padding-left: 15px;
   margin-right: 15px;
   border-radius: 5px;
-  background-color: #aaa69d;
+  background-color: #c8d6e5;
   color: black;
 }
 
@@ -70,7 +70,7 @@
   height: 35px;
   outline: none;
   border: none;
-  background-color: #aaa69d;
+  background-color: #c8d6e5;
   border-radius: 5px;
   cursor: pointer;
   color: black;
@@ -117,8 +117,8 @@
   border-radius: 15px;
   cursor: pointer;
   color: black;
-  background-color: #aaa69d;
-  border: 1px solid #aaa69d;
+  background-color: #c8d6e5;
+  border: 1px solid #c8d6e5;
 }
 
 // @media only screen and (max-width: 650px) {
