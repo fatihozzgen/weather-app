@@ -1,14 +1,15 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "../style/button.scss";
 import { BsFillCloudDrizzleFill, BsFillCloudSnowFill } from "react-icons/bs";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { AiFillCloud } from "react-icons/ai";
+import { useContext } from "react";
+import { mainContext } from "../context";
+
 function Home() {
-  const [login, setLogin] = useState(true);
-  const [register, setRegister] = useState(true);
-  const [data, setData] = useState();
-  const [search, setSearch] = useState("istanbul");
+  const { search, setSearch, data, setData, register, setRegister } =
+    useContext(mainContext);
 
   const getData = async () => {
     const { data } = await axios.get(

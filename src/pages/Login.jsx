@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../style/login.scss";
 import { GrFacebook } from "react-icons/gr";
 import { FaTwitterSquare, FaUser } from "react-icons/fa";
@@ -7,10 +6,12 @@ import { BsLinkedin } from "react-icons/bs";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { mainContext } from "../context";
 
-const Login = ({ setLogin }) => {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+const Login = () => {
+  const { username, setUsername, password, setPassword, setLogin } =
+    useContext(mainContext);
 
   const loginChange = (e) => {
     if (username === "admin" && password === "admin") {
@@ -34,6 +35,7 @@ const Login = ({ setLogin }) => {
       draggable: true,
       progress: undefined,
     });
+
   return (
     <div className="logwrapper">
       <div className="log1">
