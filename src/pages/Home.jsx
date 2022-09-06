@@ -8,8 +8,16 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Home() {
-  const { search, setSearch, data, setData, register, setRegister } =
-    useContext(mainContext);
+  const {
+    search,
+    setSearch,
+    data,
+    setData,
+    register,
+    setRegister,
+    lastSearch,
+    setLastSearch,
+  } = useContext(mainContext);
 
   const getData = async () => {
     const { data } = await axios.get(
@@ -24,12 +32,25 @@ function Home() {
   }, []);
 
   const handleSearch = (e) => {
+    if (lastSearch.length < 3) {
+      lastSearch.push(search);
+    } else {
+      lastSearch.shift();
+      lastSearch.push(search);
+      console.log("else");
+    }
+
     e.preventDefault();
     setSearch("");
 
     getData();
   };
-  console.log();
+  console.log(lastSearch);
+
+  const denemeClick = (item) => {
+    setSearch(item);
+    console.log(search);
+  };
 
   return (
     <div className="home">
@@ -52,9 +73,11 @@ function Home() {
           </div>
         </form>
         <div className="latest">
-          <div onClick={() => getData()}> İstanbul</div>
-          <div> Adana</div>
-          <div> İzmir</div>
+          {lastSearch.map((item, idx) => (
+            <div onClick={() => denemeClick(item, idx)} key={idx}>
+              {item}
+            </div>
+          ))}
         </div>
 
         <div className="location">{data?.name}</div>

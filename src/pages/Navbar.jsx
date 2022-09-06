@@ -7,15 +7,19 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Navbar() {
-  const { username, login } = useContext(mainContext);
+  const { username, login, password } = useContext(mainContext);
+  console.log(login);
+
   return (
     <div className="navbar">
       <div className="weathicon">
-        <TiWeatherPartlySunny size={42} />
+        Weather <span>Forecast</span>
       </div>
 
       <div className="ppicon">
-        <div> {!login && username}</div>
+        <div className="userauth">
+          {!login && username} {!login && password}
+        </div>
         {login ? <BiLogIn size={40} /> : <CgProfile size={40} />}
       </div>
     </div>

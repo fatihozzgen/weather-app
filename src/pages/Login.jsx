@@ -14,7 +14,7 @@ const Login = () => {
     useContext(mainContext);
 
   const loginChange = (e) => {
-    if (username === "admin" && password === "admin") {
+    if (username !== "" && password !== "") {
       setLogin(false);
       console.log("giriş başarılı");
     } else {
