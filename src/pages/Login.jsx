@@ -14,7 +14,7 @@ const Login = () => {
     useContext(mainContext);
 
   const loginChange = (e) => {
-    if (username !== "" && password !== "") {
+    if (username === "admin" && password === "admin") {
       setLogin(false);
       console.log("giriş başarılı");
     } else {
@@ -46,7 +46,7 @@ const Login = () => {
             <input
               value={username}
               className="loginput"
-              placeholder="Name"
+              placeholder="username"
               type="text"
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -59,8 +59,8 @@ const Login = () => {
             <input
               value={password}
               className="loginput"
-              placeholder="Surname"
-              type="text"
+              placeholder="password"
+              type="password"
               onChange={(e) => setPassword(e.target.value)}
             ></input>
             <span className="inputicon">

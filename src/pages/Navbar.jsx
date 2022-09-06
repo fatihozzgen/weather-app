@@ -1,8 +1,6 @@
 import React from "react";
-import { TiWeatherPartlySunny } from "react-icons/ti";
 import { CgProfile } from "react-icons/cg";
 import { BiLogIn } from "react-icons/bi";
-
 import { useContext } from "react";
 import { mainContext } from "../context";
 
@@ -17,9 +15,7 @@ function Navbar() {
       </div>
 
       <div className="ppicon">
-        <div className="userauth">
-          {!login && username} {!login && password}
-        </div>
+        <div className="userauth">{!login && username} </div>
         {login ? <BiLogIn size={40} /> : <CgProfile size={40} />}
       </div>
     </div>

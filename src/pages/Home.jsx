@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Home() {
-  const [deneme, setDeneme] = useState();
+  const [lastitem, setLastitem] = useState();
   const {
     search,
     setSearch,
@@ -17,7 +17,6 @@ function Home() {
     register,
     setRegister,
     lastSearch,
-    setLastSearch,
   } = useContext(mainContext);
 
   const getData = async () => {
@@ -30,7 +29,7 @@ function Home() {
   useEffect(() => {
     getData();
     setSearch("");
-  }, [deneme]);
+  }, [lastitem]);
 
   const handleSearch = (e) => {
     if (lastSearch.length < 3) {
@@ -47,8 +46,8 @@ function Home() {
   };
   console.log(lastSearch);
 
-  const denemeClick = (item) => {
-    setDeneme(item);
+  const lastClick = (item) => {
+    setLastitem(item);
     setSearch(item);
   };
 
@@ -58,7 +57,7 @@ function Home() {
         className="box1"
         style={register ? { position: "absolute" } : { position: "relative" }}
       >
-        <form className="inputwrapper">
+        <form className="inputwrapper" onSubmit={handleSearch}>
           <input
             className="input"
             type="text"
@@ -67,14 +66,14 @@ function Home() {
             onChange={(e) => setSearch(e.target.value)}
           />
           <div className="buttonwrapper">
-            <button className="button" onClick={handleSearch}>
+            <button className="button" type="submit">
               Search
             </button>
           </div>
         </form>
         <div className="latest">
           {lastSearch.map((item, idx) => (
-            <div onClick={() => denemeClick(item, idx)} key={idx}>
+            <div onClick={() => lastClick(item, idx)} key={idx}>
               {item}
             </div>
           ))}
