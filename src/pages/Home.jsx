@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../style/button.scss";
 import { BsFillCloudDrizzleFill, BsFillCloudSnowFill } from "react-icons/bs";
 import { MdOutlineWbSunny } from "react-icons/md";
@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Home() {
+  const [deneme, setDeneme] = useState();
   const {
     search,
     setSearch,
@@ -29,7 +30,7 @@ function Home() {
   useEffect(() => {
     getData();
     setSearch("");
-  }, []);
+  }, [deneme]);
 
   const handleSearch = (e) => {
     if (lastSearch.length < 3) {
@@ -42,14 +43,13 @@ function Home() {
 
     e.preventDefault();
     setSearch("");
-
     getData();
   };
   console.log(lastSearch);
 
   const denemeClick = (item) => {
+    setDeneme(item);
     setSearch(item);
-    console.log(search);
   };
 
   return (
