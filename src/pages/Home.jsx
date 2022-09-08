@@ -64,6 +64,20 @@ function Home() {
     setLastitem(item);
     setSearch(item);
   };
+  const convertDate = (stamp) => {
+    const date = new Date(stamp * 1000);
+    const day = date.getDay();
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    return days[day];
+  };
 
   return (
     <div className="home">
@@ -152,10 +166,8 @@ function Home() {
                 alt="weather"
               />
             </div>
-            <div>
-              {new Date(cityDetails?.daily[1].dt * 1000).toLocaleDateString()}
-            </div>
-            <div>{Math.floor(cityDetails?.daily[1].temp.day)}</div>
+            <div>{convertDate(cityDetails?.daily[1].dt)}</div>
+            <div>{Math.floor(cityDetails?.daily[1].temp.day)} °C</div>
           </div>
           <div className="days">
             <div className="detail-icon">
@@ -166,9 +178,9 @@ function Home() {
               />
             </div>
             <div>
-              {new Date(cityDetails?.daily[2].dt * 1000).toLocaleDateString()}
+              <div>{convertDate(cityDetails?.daily[2].dt)}</div>
             </div>
-            <div>{Math.floor(cityDetails?.daily[2].temp.day)}</div>
+            <div>{Math.floor(cityDetails?.daily[2].temp.day)} °C</div>
           </div>
           <div className="days">
             <div className="detail-icon">
@@ -180,9 +192,9 @@ function Home() {
             </div>
 
             <div>
-              {new Date(cityDetails?.daily[3].dt * 1000).toLocaleDateString()}
+              <div>{convertDate(cityDetails?.daily[3].dt)}</div>
             </div>
-            <div>{Math.floor(cityDetails?.daily[3].temp.day)}</div>
+            <div>{Math.floor(cityDetails?.daily[3].temp.day)} °C</div>
           </div>
           <div className="days">
             <div className="detail-icon">
@@ -193,9 +205,9 @@ function Home() {
               />
             </div>
             <div>
-              {new Date(cityDetails?.daily[4].dt * 1000).toLocaleDateString()}
+              <div>{convertDate(cityDetails?.daily[4].dt)}</div>
             </div>
-            <div>{Math.floor(cityDetails?.daily[4].temp.day)}</div>
+            <div>{Math.floor(cityDetails?.daily[4].temp.day)} °C</div>
           </div>
         </div>
       </div>
