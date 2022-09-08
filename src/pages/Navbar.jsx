@@ -6,7 +6,6 @@ import { mainContext } from "../context";
 
 function Navbar() {
   const { username, login, password } = useContext(mainContext);
-  console.log(login);
 
   return (
     <div className="navbar">

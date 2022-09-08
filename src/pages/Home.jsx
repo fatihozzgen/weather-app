@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../style/button.scss";
-import { BsFillCloudDrizzleFill, BsFillCloudSnowFill } from "react-icons/bs";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { AiFillCloud } from "react-icons/ai";
 import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Home() {
   const [lastitem, setLastitem] = useState();
+  const [location, setLocation] = useState({});
+  const [cityDetails, setCityDetails] = useState();
+
   const {
     search,
     setSearch,
@@ -24,10 +24,26 @@ function Home() {
       `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=c9b41855ce7ae49f15ba6d36fe905061&units=metric`
     );
     setData(data);
+    setLocation({
+      lat: data.coord.lat,
+      lon: data.coord.lon,
+    });
+  };
+
+  const detailsFetch = async () => {
+    const { data } = await axios.get(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly,alerts&appid=ec7d1c0e712571e97e77329fca7e15f3&units=metric&lang=tr`
+    );
+    setCityDetails(data);
   };
 
   useEffect(() => {
+    detailsFetch();
+  }, [data]);
+
+  useEffect(() => {
     getData();
+    detailsFetch();
     setSearch("");
   }, [lastitem]);
 
@@ -37,7 +53,6 @@ function Home() {
     } else {
       lastSearch.shift();
       lastSearch.push(search);
-      console.log("else");
     }
 
     e.preventDefault();
@@ -130,33 +145,57 @@ function Home() {
 
         <div className="dayswrapper">
           <div className="days">
-            <div>
-              <MdOutlineWbSunny size={50} />
+            <div className="detail-icon">
+              <img
+                src={`icons/${cityDetails?.daily[1].weather[0].icon}.png`}
+                className="icon-small"
+                alt="weather"
+              />
             </div>
-            <div>Tue </div>
-            <div>18°C </div>
+            <div>
+              {new Date(cityDetails?.daily[1].dt * 1000).toLocaleDateString()}
+            </div>
+            <div>{Math.floor(cityDetails?.daily[1].temp.day)}</div>
           </div>
           <div className="days">
-            <div>
-              <AiFillCloud size={50} />
+            <div className="detail-icon">
+              <img
+                src={`icons/${cityDetails?.daily[2].weather[0].icon}.png`}
+                className="icon-small"
+                alt="weather"
+              />
             </div>
-            <div>Wed </div>
-            <div>25°C </div>
+            <div>
+              {new Date(cityDetails?.daily[2].dt * 1000).toLocaleDateString()}
+            </div>
+            <div>{Math.floor(cityDetails?.daily[2].temp.day)}</div>
           </div>
           <div className="days">
-            <div>
-              <BsFillCloudSnowFill size={50} />
+            <div className="detail-icon">
+              <img
+                src={`icons/${cityDetails?.daily[3].weather[0].icon}.png`}
+                className="icon-small"
+                alt="weather"
+              />
             </div>
 
-            <div>Thu </div>
-            <div>22°C </div>
+            <div>
+              {new Date(cityDetails?.daily[3].dt * 1000).toLocaleDateString()}
+            </div>
+            <div>{Math.floor(cityDetails?.daily[3].temp.day)}</div>
           </div>
           <div className="days">
-            <div>
-              <BsFillCloudDrizzleFill size={50} />
+            <div className="detail-icon">
+              <img
+                src={`icons/${cityDetails?.daily[4].weather[0].icon}.png`}
+                className="icon-small"
+                alt="weather"
+              />
             </div>
-            <div>Fry </div>
-            <div>16°C </div>
+            <div>
+              {new Date(cityDetails?.daily[4].dt * 1000).toLocaleDateString()}
+            </div>
+            <div>{Math.floor(cityDetails?.daily[4].temp.day)}</div>
           </div>
         </div>
       </div>

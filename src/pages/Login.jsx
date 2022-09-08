@@ -109,8 +109,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="log2">log2</div> */}
     </div>
   );
 };

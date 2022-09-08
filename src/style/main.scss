@@ -20,16 +20,16 @@
 .home::after {
   content: "";
   background: url("../img/rainy.jpg");
-
   opacity: 0.8;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   background-repeat: no-repeat;
-  background-position: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .box1 {
