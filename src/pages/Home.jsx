@@ -44,7 +44,6 @@ function Home() {
     setSearch("");
     getData();
   };
-  console.log(lastSearch);
 
   const lastClick = (item) => {
     setLastitem(item);

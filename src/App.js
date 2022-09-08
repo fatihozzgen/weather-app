@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Navbar from "./pages/Navbar";
 import { useState } from "react";
 import { mainContext } from "./context";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const [login, setLogin] = useState(true);
@@ -41,15 +42,17 @@ function App() {
   }
 
   return (
-    <mainContext.Provider value={datax}>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </mainContext.Provider>
+    <ErrorBoundary isHome={true}>
+      <mainContext.Provider value={datax}>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </mainContext.Provider>
+    </ErrorBoundary>
   );
 }
 
