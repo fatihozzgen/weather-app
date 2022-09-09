@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { mainContext } from "../context";
-import Home from "./Home";
 
 const Login = () => {
   const { username, setUsername, password, setPassword, setLogin } =
@@ -42,49 +41,49 @@ const Login = () => {
     });
 
   return (
-    <div className="logwrapper">
+    <div className="log">
       {getUser && getPass ? setLogin(false) : setLogin(true)}
-      <div className="log1">
-        <p className="logwelcome"> WELCOME TO</p>
-        <p className="logweather">Weather Forecast</p>
+      <div className="log-box">
+        <p className="log-welcome"> WELCOME TO</p>
+        <p className="log-weather">Weather Forecast</p>
         <form>
-          <div className="username">
+          <div className="log-username">
             <input
               value={username}
-              className="loginput"
+              className="log-input"
               placeholder="username"
               type="text"
               onChange={(e) => setUsername(e.target.value)}
             />
-            <span className="inputicon">
+            <span className="log-inputicon">
               <FaUser size={16} />
             </span>
           </div>
 
-          <div className="password">
+          <div className="log-password">
             <input
               value={password}
-              className="loginput"
+              className="log-input"
               placeholder="password"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             ></input>
-            <span className="inputicon">
+            <span className="log-inputicon">
               <RiLockPasswordLine size={16} />
             </span>
           </div>
 
-          <button className="logbutton" onClick={loginChange}>
+          <button className="log-button" onClick={loginChange}>
             SIGN IN
           </button>
-          <p className="logaccount">
+          <p className="log-account">
             Don't have an account? <span> Sign Up Now</span>
           </p>
 
-          <div className="line">
-            <div className=" line2" />
-            <span className="logor">OR</span>
-            <div className="line2" />
+          <div className="log-line">
+            <div className="log-line2" />
+            <span className="log-or">OR</span>
+            <div className="log-line2" />
           </div>
           <ToastContainer
             position="top-center"
@@ -99,18 +98,18 @@ const Login = () => {
           />
         </form>
 
-        <p className="logcontinue">Continue with social media </p>
-        <div className="iconwrapper">
-          <div className="facebook">
+        <p className="log-continue">Continue with social media </p>
+        <div className="log-iconwrapper">
+          <div className="log-facebook">
             <GrFacebook size={30} />
           </div>
-          <div className="twitter">
+          <div className="log-twitter">
             <FaTwitterSquare size={32} />
           </div>
-          <div className="gmail">
+          <div className="log-gmail">
             <SiGmail size={31} />
           </div>
-          <div className="linkedin">
+          <div className="log-linkedin">
             <BsLinkedin size={30} />
           </div>
         </div>

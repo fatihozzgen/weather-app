@@ -1,4 +1,4 @@
-.logwrapper {
+.log {
   display: flex;
   justify-content: center;
   padding-top: 50px;
@@ -6,154 +6,122 @@
   width: 100%;
   height: calc(100% - 55px);
   position: absolute;
-}
-
-.log1 {
-  width: 400px;
-  height: 500px;
-  background-color: whitesmoke;
-  border-radius: 15px;
-  // border-top-left-radius: 15px;
-  // border-bottom-left-radius: 15px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.loginput {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.log2 {
-  width: 400px;
-  height: 500px;
-  background-color: orange;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  padding: 10px;
-}
-
-.iconwrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  color: blue;
-}
-
-.facebook {
-  color: #385185;
-  cursor: pointer;
-}
-
-.twitter {
-  color: #00acee;
-  cursor: pointer;
-}
-
-.gmail {
-  color: #bb001b;
-  cursor: pointer;
-}
-.linkedin {
-  color: #0072b1;
-  cursor: pointer;
-}
-
-.logwelcome {
-  font-size: 12px;
-  font-weight: 800;
-  color: #596275;
-  margin-top: 40px;
-}
-
-.logweather {
-  font-size: 30px;
-  font-weight: 900;
-  color: #f79f1f;
-  margin-bottom: 20px;
-}
-
-.loginput {
-  width: 280px;
-  height: 35px;
-  border-radius: 25px;
-  border: 1px solid silver;
-  outline: none;
-  padding-left: 30px;
-}
-
-.logbutton {
-  margin-top: 5px;
-  width: 280px;
-  height: 35px;
-  border-radius: 25px;
-  color: white;
-  background-color: #f79f1f;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-
-.logaccount {
-  font-size: 10px;
-  font-weight: 500;
-  color: #596275;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.logaccount > span {
-  color: #f79f1f;
-  margin-left: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.logor {
-  display: flex;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 900;
-  color: #596275;
-
-  margin: 0px 6px 25px 6px;
-}
-
-.logcontinue {
-  color: #596275;
-  font-size: 12px;
-  font-weight: 500;
-  margin-bottom: 15px;
-}
-
-.username,
-.password {
-  position: relative;
-  height: 35px;
-  display: flex;
-  margin-bottom: 10px;
-}
-.inputicon {
-  position: absolute;
-  top: 9px;
-  left: 6px;
-  color: #596275;
-}
-
-.line {
-  display: flex;
-  align-items: center;
-}
-
-.line2 {
-  height: 2px;
-  margin-bottom: 25px;
-  background-color: #596275;
-  flex: 1;
+  &-box {
+    width: 400px;
+    height: 500px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &-welcome {
+    font-size: 12px;
+    font-weight: 800;
+    color: #596275;
+    margin-top: 40px;
+  }
+  &-weather {
+    font-size: 30px;
+    font-weight: 900;
+    color: #f79f1f;
+    margin-bottom: 20px;
+  }
+  &-username,
+  &-password {
+    position: relative;
+    height: 35px;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 35px;
+    border-radius: 25px;
+    border: 1px solid silver;
+    outline: none;
+    padding-left: 30px;
+  }
+  &-inputicon {
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    color: #596275;
+  }
+  &-button {
+    margin-top: 5px;
+    width: 280px;
+    height: 35px;
+    border-radius: 25px;
+    color: white;
+    background-color: #f79f1f;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  &-account {
+    font-size: 10px;
+    font-weight: 500;
+    color: #596275;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    & > span {
+      color: #f79f1f;
+      margin-left: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+  &-line {
+    display: flex;
+    align-items: center;
+  }
+  &-line2 {
+    height: 2px;
+    margin-bottom: 25px;
+    background-color: #596275;
+    flex: 1;
+  }
+  &-continue {
+    color: #596275;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  &-iconwrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  &-or {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+    color: #596275;
+    margin: 0px 6px 25px 6px;
+  }
+  &-facebook {
+    color: #385185;
+    cursor: pointer;
+  }
+  &twitter {
+    color: #00acee;
+    cursor: pointer;
+  }
+  &-gmail {
+    color: #bb001b;
+    cursor: pointer;
+  }
+  &-linkedin {
+    color: #0072b1;
+    cursor: pointer;
+  }
 }

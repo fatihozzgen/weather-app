@@ -1,6 +1,6 @@
 import React from "react";
-import { CgProfile } from "react-icons/cg";
-import { BiLogIn, BiLogOut } from "react-icons/bi";
+import { BiLogIn } from "react-icons/bi";
+import { FaPowerOff } from "react-icons/fa";
 import { useContext } from "react";
 import { mainContext } from "../context";
 
@@ -13,22 +13,23 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar">
-      <div className="weathicon">
+    <div className="nav">
+      <div className="nav-logo">
         Weather <span>Forecast</span>
       </div>
-      <div></div>
-      <div className="ppicon">
-        {login ? (
+      {login ? (
+        <div className="nav-inout">
           <BiLogIn size={40} />
-        ) : (
-          <label>
-            <div className="logout" onClick={logOut}>
-              <BiLogOut size={40} />
-            </div>
-          </label>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div
+          className="nav-inout"
+          onClick={logOut}
+          style={{ color: "#d63031" }}
+        >
+          <FaPowerOff size={30} />
+        </div>
+      )}
     </div>
   );
 }

@@ -14,7 +14,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [lastSearch, setLastSearch] = useState([]);
-  const [lastitem, setLastitem] = useState();
+  const [lastitem, setLastitem] = useState([]);
   const [location, setLocation] = useState({});
   const [cityDetails, setCityDetails] = useState();
 
