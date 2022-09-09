@@ -14,6 +14,9 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [lastSearch, setLastSearch] = useState([]);
+  const [lastitem, setLastitem] = useState();
+  const [location, setLocation] = useState({});
+  const [cityDetails, setCityDetails] = useState();
 
   const datax = {
     login,
@@ -30,6 +33,12 @@ function App() {
     setPassword,
     lastSearch,
     setLastSearch,
+    lastitem,
+    setLastitem,
+    location,
+    setLocation,
+    cityDetails,
+    setCityDetails,
   };
 
   if (login) {

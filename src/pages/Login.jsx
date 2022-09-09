@@ -8,14 +8,19 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { mainContext } from "../context";
+import Home from "./Home";
 
 const Login = () => {
   const { username, setUsername, password, setPassword, setLogin } =
     useContext(mainContext);
+  const getUser = localStorage.getItem("user");
+  const getPass = localStorage.getItem("pass");
 
   const loginChange = (e) => {
     if (username === "admin" && password === "admin") {
       setLogin(false);
+      localStorage.setItem("user", username);
+      localStorage.setItem("pass", password);
       console.log("giriş başarılı");
     } else {
       e.preventDefault();
@@ -38,6 +43,7 @@ const Login = () => {
 
   return (
     <div className="logwrapper">
+      {getUser && getPass ? setLogin(false) : setLogin(true)}
       <div className="log1">
         <p className="logwelcome"> WELCOME TO</p>
         <p className="logweather">Weather Forecast</p>

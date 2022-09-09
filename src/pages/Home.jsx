@@ -5,10 +5,6 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Home() {
-  const [lastitem, setLastitem] = useState();
-  const [location, setLocation] = useState({});
-  const [cityDetails, setCityDetails] = useState();
-
   const {
     search,
     setSearch,
@@ -17,11 +13,17 @@ function Home() {
     register,
     setRegister,
     lastSearch,
+    location,
+    setLocation,
+    cityDetails,
+    setCityDetails,
+    lastitem,
+    setLastitem,
   } = useContext(mainContext);
 
   const getData = async () => {
     const { data } = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=c9b41855ce7ae49f15ba6d36fe905061&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=c9b41855ce7ae49f15ba6d36fe905061&units=metric&lang=tr`
     );
     setData(data);
     setLocation({
@@ -64,8 +66,8 @@ function Home() {
     setLastitem(item);
     setSearch(item);
   };
-  const convertDate = (stamp) => {
-    const date = new Date(stamp * 1000);
+  const forecastDays = (item) => {
+    const date = new Date(item * 1000);
     const day = date.getDay();
     const days = [
       "Sunday",
@@ -166,7 +168,7 @@ function Home() {
                 alt="weather"
               />
             </div>
-            <div>{convertDate(cityDetails?.daily[1].dt)}</div>
+            <div>{forecastDays(cityDetails?.daily[1].dt)}</div>
             <div>{Math.floor(cityDetails?.daily[1].temp.day)} °C</div>
           </div>
           <div className="days">
@@ -178,7 +180,7 @@ function Home() {
               />
             </div>
             <div>
-              <div>{convertDate(cityDetails?.daily[2].dt)}</div>
+              <div>{forecastDays(cityDetails?.daily[2].dt)}</div>
             </div>
             <div>{Math.floor(cityDetails?.daily[2].temp.day)} °C</div>
           </div>
@@ -192,7 +194,7 @@ function Home() {
             </div>
 
             <div>
-              <div>{convertDate(cityDetails?.daily[3].dt)}</div>
+              <div>{forecastDays(cityDetails?.daily[3].dt)}</div>
             </div>
             <div>{Math.floor(cityDetails?.daily[3].temp.day)} °C</div>
           </div>
@@ -205,7 +207,7 @@ function Home() {
               />
             </div>
             <div>
-              <div>{convertDate(cityDetails?.daily[4].dt)}</div>
+              <div>{forecastDays(cityDetails?.daily[4].dt)}</div>
             </div>
             <div>{Math.floor(cityDetails?.daily[4].temp.day)} °C</div>
           </div>
