@@ -87,21 +87,21 @@ function Home() {
         className="box1"
         style={register ? { position: "absolute" } : { position: "relative" }}
       >
-        <form className="inputwrapper" onSubmit={handleSearch}>
+        <form className="box1-inputwrapper" onSubmit={handleSearch}>
           <input
-            className="input"
+            className="box1-input"
             type="text"
             placeholder="Your City"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <div className="buttonwrapper">
-            <button className="button" type="submit">
+          <div>
+            <button className="box1-button" type="submit">
               Search
             </button>
           </div>
         </form>
-        <div className="latest">
+        <div className="box1-latest">
           {lastSearch.map((item, idx) => (
             <div onClick={() => lastClick(item, idx)} key={idx}>
               {item}
@@ -109,9 +109,9 @@ function Home() {
           ))}
         </div>
 
-        <div className="location">{data?.name}</div>
-        <div className="derece">{Math.round(data?.main.temp)}°C</div>
-        <div className="hava">
+        <div className="box1-location">{data?.name}</div>
+        <div className="box1-temp">{Math.round(data?.main.temp)}°C</div>
+        <div className="box1-weath">
           <img
             src={`icons/${data?.weather[0].icon}.png`}
             className="icon-small"
@@ -144,24 +144,24 @@ function Home() {
       </div>
 
       <div className="box2">
-        <div className="detailwrapper">
-          <div className="detail">
+        <div className="box2-wrapper">
+          <div className="box2-detail">
             Feels Like <div>{Math.round(data?.main.feels_like)} °C</div>
           </div>
-          <div className="detail">
+          <div className="box2-detail">
             Wind <div>{data?.wind.speed} km/h</div>
           </div>
-          <div className="detail">
+          <div className="box2-detail">
             Humidity <div>{data?.main.humidity} %</div>
           </div>
-          <div className="detail">
+          <div className="box2-detail">
             Pressure <div>{data?.main.pressure} mb</div>
           </div>
         </div>
 
-        <div className="dayswrapper">
-          <div className="days">
-            <div className="detail-icon">
+        <div className="box2-dayswrapper">
+          <div className="box2-days">
+            <div className="box2-detail-icon">
               <img
                 src={`icons/${cityDetails?.daily[1].weather[0].icon}.png`}
                 className="icon-small"
@@ -171,8 +171,8 @@ function Home() {
             <div>{forecastDays(cityDetails?.daily[1].dt)}</div>
             <div>{Math.floor(cityDetails?.daily[1].temp.day)} °C</div>
           </div>
-          <div className="days">
-            <div className="detail-icon">
+          <div className="box2-days">
+            <div className="box2-detail-icon">
               <img
                 src={`icons/${cityDetails?.daily[2].weather[0].icon}.png`}
                 className="icon-small"
@@ -184,8 +184,8 @@ function Home() {
             </div>
             <div>{Math.floor(cityDetails?.daily[2].temp.day)} °C</div>
           </div>
-          <div className="days">
-            <div className="detail-icon">
+          <div className="box2-days">
+            <div className="box2-detail-icon">
               <img
                 src={`icons/${cityDetails?.daily[3].weather[0].icon}.png`}
                 className="icon-small"
@@ -198,8 +198,8 @@ function Home() {
             </div>
             <div>{Math.floor(cityDetails?.daily[3].temp.day)} °C</div>
           </div>
-          <div className="days">
-            <div className="detail-icon">
+          <div className="box2-days">
+            <div className="box2-detail-icon">
               <img
                 src={`icons/${cityDetails?.daily[4].weather[0].icon}.png`}
                 className="icon-small"
