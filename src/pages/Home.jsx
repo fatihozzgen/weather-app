@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Home() {
+  const [dataLast, setDataLast] = useState();
   const {
     search,
     setSearch,
@@ -19,6 +20,7 @@ function Home() {
     setCityDetails,
     lastitem,
     setLastitem,
+    setLastSearch,
   } = useContext(mainContext);
 
   const getData = async () => {
@@ -44,6 +46,10 @@ function Home() {
   }, [data]);
 
   useEffect(() => {
+    getItem();
+  }, []);
+
+  useEffect(() => {
     getData();
     detailsFetch();
     setSearch("");
@@ -52,14 +58,21 @@ function Home() {
   const handleSearch = (e) => {
     if (lastSearch.length < 3) {
       lastSearch.push(search);
+      localStorage.setItem("testData", JSON.stringify(lastSearch));
     } else {
       lastSearch.shift();
       lastSearch.push(search);
+      localStorage.setItem("testData", JSON.stringify(lastSearch));
     }
 
     e.preventDefault();
     setSearch("");
     getData();
+  };
+
+  const getItem = () => {
+    const localData = localStorage.getItem("testData") ?? [];
+    setLastSearch(localData.length > 1 ? JSON.parse(localData) : localData);
   };
 
   const lastClick = (item) => {
@@ -102,8 +115,8 @@ function Home() {
           </div>
         </form>
         <div className="box1-latest">
-          {lastSearch.map((item, idx) => (
-            <div onClick={() => lastClick(item, idx)} key={idx}>
+          {lastSearch.map((item, i) => (
+            <div onClick={() => lastClick(item, i)} key={i}>
               {item}
             </div>
           ))}
