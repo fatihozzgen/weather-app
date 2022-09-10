@@ -4,7 +4,7 @@
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
   color: whitesmoke;
-  backdrop-filter: blur(11px);
+  backdrop-filter: blur(14px);
   box-shadow: 0px 0px 7px -2px #000000;
   &-wrapper {
     font-weight: 600;
@@ -57,6 +57,14 @@
     & > img {
       width: 90px;
       height: 90px;
+    }
+  }
+  &-minicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > span {
+      margin-right: 7px;
     }
   }
 }

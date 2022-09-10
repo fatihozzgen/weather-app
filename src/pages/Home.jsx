@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import "../style/button.scss";
 import { useContext } from "react";
 import { mainContext } from "../context";
+import { WiStrongWind, WiHumidity } from "react-icons/wi";
+import { BsThermometerHalf } from "react-icons/bs";
+import { MdOutlineCompress } from "react-icons/md";
 
 function Home() {
-  const [dataLast, setDataLast] = useState();
   const {
     search,
     setSearch,
@@ -95,7 +97,10 @@ function Home() {
   };
 
   return (
-    <div className="home">
+    <div
+      className="home"
+      style={{ backgroundImage: `url("icons/${data?.weather[0].icon}.jpg")` }}
+    >
       <div
         className="box1"
         style={register ? { position: "absolute" } : { position: "relative" }}
@@ -159,16 +164,44 @@ function Home() {
       <div className="box2">
         <div className="box2-wrapper">
           <div className="box2-detail">
-            Feels Like <div>{Math.round(data?.main.feels_like)} °C</div>
+            <div className="box2-minicon">
+              <span>
+                <BsThermometerHalf size={22} />
+              </span>
+              Feels Like
+            </div>
+
+            <div>{Math.round(data?.main.feels_like)} °C</div>
           </div>
+
           <div className="box2-detail">
-            Wind <div>{data?.wind.speed} km/h</div>
+            <div className="box2-minicon">
+              <span>
+                <WiStrongWind size={22} />
+              </span>
+              Wind
+            </div>
+            <div>{data?.wind.speed} km/h</div>
           </div>
+
           <div className="box2-detail">
-            Humidity <div>{data?.main.humidity} %</div>
+            <div className="box2-minicon">
+              <span>
+                <WiHumidity size={22} />
+              </span>
+              Humidity
+            </div>
+            <div>{data?.main.humidity} %</div>
           </div>
+
           <div className="box2-detail">
-            Pressure <div>{data?.main.pressure} mb</div>
+            <div className="box2-minicon">
+              <span>
+                <MdOutlineCompress size={22} />
+              </span>
+              Pressure
+            </div>
+            <div>{data?.main.pressure} mb</div>
           </div>
         </div>
 
