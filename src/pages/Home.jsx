@@ -166,7 +166,7 @@ function Home() {
           <div className="box2-detail">
             <div className="box2-minicon">
               <span>
-                <BsThermometerHalf size={22} />
+                <BsThermometerHalf />
               </span>
               Feels Like
             </div>
@@ -187,7 +187,7 @@ function Home() {
           <div className="box2-detail">
             <div className="box2-minicon">
               <span>
-                <WiHumidity size={22} />
+                <WiHumidity />
               </span>
               Humidity
             </div>
@@ -197,7 +197,7 @@ function Home() {
           <div className="box2-detail">
             <div className="box2-minicon">
               <span>
-                <MdOutlineCompress size={22} />
+                <MdOutlineCompress />
               </span>
               Pressure
             </div>
