@@ -214,7 +214,9 @@ function Home() {
                 alt="weather"
               />
             </div>
-            <div>{forecastDays(cityDetails?.daily[1].dt)}</div>
+            <div className="box2-date">
+              {forecastDays(cityDetails?.daily[1].dt)}
+            </div>
             <div>{Math.floor(cityDetails?.daily[1].temp.day)} °C</div>
           </div>
           <div className="box2-days">
@@ -226,7 +228,9 @@ function Home() {
               />
             </div>
             <div>
-              <div>{forecastDays(cityDetails?.daily[2].dt)}</div>
+              <div className="box2-date">
+                {forecastDays(cityDetails?.daily[2].dt)}
+              </div>
             </div>
             <div>{Math.floor(cityDetails?.daily[2].temp.day)} °C</div>
           </div>
@@ -240,7 +244,9 @@ function Home() {
             </div>
 
             <div>
-              <div>{forecastDays(cityDetails?.daily[3].dt)}</div>
+              <div className="box2-date">
+                {forecastDays(cityDetails?.daily[3].dt)}
+              </div>
             </div>
             <div>{Math.floor(cityDetails?.daily[3].temp.day)} °C</div>
           </div>
@@ -253,7 +259,9 @@ function Home() {
               />
             </div>
             <div>
-              <div>{forecastDays(cityDetails?.daily[4].dt)}</div>
+              <div className="box2-date">
+                {forecastDays(cityDetails?.daily[4].dt)}
+              </div>
             </div>
             <div>{Math.floor(cityDetails?.daily[4].temp.day)} °C</div>
           </div>
