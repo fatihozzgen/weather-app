@@ -47,7 +47,7 @@ html {
     height: 2.5rem;
     width: 14rem;
     outline: none;
-    border: 2px solid silver;
+    border: 0.2rem solid silver;
     // padding-top: 0.4rem;
     padding-left: 1rem;
     margin-right: 1rem;
@@ -66,7 +66,7 @@ html {
     width: 5rem;
     height: 2.5rem;
     outline: none;
-    border: 2px solid silver;
+    border: 0.2rem solid silver;
     background-color: #1e272e;
     border-radius: 0.4rem;
     cursor: pointer;
@@ -97,7 +97,7 @@ html {
       cursor: pointer;
       color: whitesmoke;
       background-color: #1e272e;
-      border: 2px solid silver;
+      border: 0.2rem solid silver;
     }
   }
   &-temp {

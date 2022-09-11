@@ -18,7 +18,8 @@
   &-detail {
     display: flex;
     justify-content: space-between;
-    border-bottom: 3px solid rgb(63, 62, 62);
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid rgb(63, 62, 62);
   }
   &-dayswrapper {
     display: flex;
@@ -30,7 +31,7 @@
   &-days {
     width: 5.7rem;
     height: 9.7rem;
-    border: 2px solid silver;
+    border: 0.2rem solid silver;
     display: flex;
     justify-content: center;
     align-items: center;
