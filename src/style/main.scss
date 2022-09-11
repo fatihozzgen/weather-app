@@ -51,7 +51,7 @@ html {
     // padding-top: 0.4rem;
     padding-left: 1rem;
     margin-right: 1rem;
-    border-radius: 5px;
+    border-radius: 0.4rem;
     background-color: #1e272e;
     color: whitesmoke;
     display: flex;
@@ -64,11 +64,11 @@ html {
   }
   &-button {
     width: 5rem;
-    height: 2rem;
+    height: 2.5rem;
     outline: none;
     border: 2px solid silver;
     background-color: #1e272e;
-    border-radius: 5px;
+    border-radius: 0.4rem;
     cursor: pointer;
     color: whitesmoke;
     font-size: 1rem;
@@ -93,7 +93,7 @@ html {
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 15px;
+      border-radius: 0.5rem;
       cursor: pointer;
       color: whitesmoke;
       background-color: #1e272e;
