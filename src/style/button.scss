@@ -1,5 +1,5 @@
 .cssbuttons-io-button {
-  background: #353b48;
+  background: #1e272e;
   color: whitesmoke;
   font-family: inherit;
   padding: 0.35em;
@@ -22,7 +22,7 @@
 }
 
 .cssbuttons-io-button .icon {
-  background: #353b48;
+  background: #1e272e;
   margin-left: 1em;
   position: absolute;
   display: flex;
@@ -43,7 +43,7 @@
 .cssbuttons-io-button .icon svg {
   width: 1.1em;
   transition: transform 0.3s;
-  color: #100f11;
+  color: whitesmoke;
 }
 
 .cssbuttons-io-button:hover .icon svg {
