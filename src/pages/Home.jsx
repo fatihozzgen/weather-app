@@ -129,10 +129,10 @@ function Home() {
         <div className="box1-weath">
           <img
             src={`icons/${data?.weather[0].icon}.png`}
-            className="icon-small"
+            className="box1-iconsmall"
             alt="weather"
           />
-          <div> {data?.weather[0].main}</div>
+          <div className="box1-desc">{data?.weather[0].main}</div>
         </div>
         <div>
           <button

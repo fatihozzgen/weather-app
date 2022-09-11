@@ -2,37 +2,37 @@
   background: #1e272e;
   color: whitesmoke;
   font-family: inherit;
-  padding: 0.35em;
-  padding-left: 1.2em;
-  font-size: 17px;
+  padding: 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 0.9em;
   border: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
   display: flex;
   align-items: center;
   overflow: hidden;
   position: absolute;
-  height: 2.8em;
-  padding-right: 3.3em;
-  bottom: 20px;
-  right: 20px;
+  height: 1.5rem;
+  padding-right: 2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   cursor: pointer;
   border: 2px solid silver;
 }
 
 .cssbuttons-io-button .icon {
   background: #1e272e;
-  margin-left: 1em;
+  margin-left: 1rem;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.7rem;
   box-shadow: 0px 0px 7px -2px #000000;
-  right: 0.3em;
+  right: 0.3rem;
   transition: all 0.3s;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .cssbuttons-io-button .icon svg {
-  width: 1.1em;
+  width: 1.1rem;
   transition: transform 0.3s;
   color: whitesmoke;
 }
