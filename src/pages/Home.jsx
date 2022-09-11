@@ -101,10 +101,7 @@ function Home() {
       className="home"
       style={{ backgroundImage: `url("icons/${data?.weather[0].icon}.jpg")` }}
     >
-      <div
-        className="box1"
-        style={register ? { position: "absolute" } : { position: "relative" }}
-      >
+      <div className="box1">
         <form className="box1-inputwrapper" onSubmit={handleSearch}>
           <input
             className="box1-input"
@@ -161,7 +158,10 @@ function Home() {
         </div>
       </div>
 
-      <div className="box2">
+      <div
+        className="box2"
+        style={register ? { display: "none" } : { display: "block" }}
+      >
         <div className="box2-wrapper">
           <div className="box2-detail">
             <div className="box2-minicon">
