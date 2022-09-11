@@ -177,7 +177,7 @@ function Home() {
           <div className="box2-detail">
             <div className="box2-minicon">
               <span>
-                <WiStrongWind size={22} />
+                <WiStrongWind />
               </span>
               Wind
             </div>
