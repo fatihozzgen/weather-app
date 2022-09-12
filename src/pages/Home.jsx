@@ -6,6 +6,7 @@ import { mainContext } from "../context";
 import { WiStrongWind, WiHumidity } from "react-icons/wi";
 import { BsThermometerHalf } from "react-icons/bs";
 import { MdOutlineCompress } from "react-icons/md";
+import { RotatingLines } from "react-loader-spinner";
 
 function Home() {
   const {
@@ -23,6 +24,8 @@ function Home() {
     lastitem,
     setLastitem,
     setLastSearch,
+    loading,
+    setLoading,
   } = useContext(mainContext);
 
   const getData = async () => {
@@ -48,7 +51,11 @@ function Home() {
   }, [data]);
 
   useEffect(() => {
-    getItem();
+    setTimeout(() => {
+      setLoading(true);
+      getItem();
+      setLoading(false);
+    }, 500);
   }, []);
 
   useEffect(() => {
@@ -99,7 +106,9 @@ function Home() {
   return (
     <div
       className="home"
-      style={{ backgroundImage: `url("icons/${data?.weather[0].icon}.jpg")` }}
+      style={{
+        backgroundImage: `url("images/${data?.weather[0].icon}.jpg")`,
+      }}
     >
       <div className="box1">
         <form className="box1-inputwrapper" onSubmit={handleSearch}>
@@ -123,17 +132,28 @@ function Home() {
             </div>
           ))}
         </div>
-
-        <div className="box1-location">{data?.name}</div>
-        <div className="box1-temp">{Math.round(data?.main.temp)}°C</div>
-        <div className="box1-weath">
-          <img
-            src={`icons/${data?.weather[0].icon}.png`}
-            className="box1-iconsmall"
-            alt="weather"
+        {loading ? (
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
           />
-          <div className="box1-desc">{data?.weather[0].main}</div>
-        </div>
+        ) : (
+          <>
+            <div className="box1-location">{data?.name}</div>
+            <div className="box1-temp">{Math.round(data?.main.temp)}°C</div>
+            <div className="box1-weath">
+              <img
+                src={`icons/${data?.weather[0].icon}.png`}
+                className="box1-iconsmall"
+                alt="weather"
+              />
+              <div className="box1-desc">{data?.weather[0].main}</div>
+            </div>
+          </>
+        )}
         <div>
           <button
             className="cssbuttons-io-button"

@@ -17,6 +17,7 @@ function App() {
   const [lastitem, setLastitem] = useState([]);
   const [location, setLocation] = useState({});
   const [cityDetails, setCityDetails] = useState();
+  const [loading, setLoading] = useState(true);
 
   const datax = {
     login,
@@ -39,6 +40,8 @@ function App() {
     setLocation,
     cityDetails,
     setCityDetails,
+    loading,
+    setLoading,
   };
 
   if (login) {
