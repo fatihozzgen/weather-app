@@ -54,7 +54,7 @@ function Home() {
     setTimeout(() => {
       setLoading(true);
       getItem();
-      setLoading(true);
+      setLoading(false);
     }, 500);
   }, []);
 
@@ -135,9 +135,9 @@ function Home() {
         {loading ? (
           <RotatingLines
             strokeColor="grey"
-            strokeWidth="4"
+            strokeWidth="3"
             animationDuration="0.75"
-            width="5rem"
+            width="7rem"
             visible={true}
           />
         ) : (
