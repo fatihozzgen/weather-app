@@ -54,15 +54,17 @@ function App() {
   }
 
   return (
-    <mainContext.Provider value={datax}>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
-    </mainContext.Provider>
+    <ErrorBoundary isHome={true}>
+      <mainContext.Provider value={datax}>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
+      </mainContext.Provider>
+    </ErrorBoundary>
   );
 }
 
