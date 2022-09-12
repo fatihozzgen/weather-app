@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { mainContext } from "../context";
 
 function Navbar() {
-  const { username, login, password } = useContext(mainContext);
+  const { login } = useContext(mainContext);
 
   const logOut = () => {
     localStorage.clear();

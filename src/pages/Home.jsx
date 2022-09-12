@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../style/button.scss";
 import { useContext } from "react";
 import { mainContext } from "../context";

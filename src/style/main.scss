@@ -10,8 +10,6 @@ html {
 }
 
 .home {
-  // background: url("../img/01n.jpg");
-  // background: url("../img/01n.jpg");
   width: 100%;
   height: calc(100% - 55px);
   display: flex;
@@ -21,7 +19,6 @@ html {
   background-position: center;
   background-size: cover;
   position: absolute;
-  flex-wrap: wrap;
 }
 
 .box1 {
@@ -48,7 +45,6 @@ html {
     width: 14rem;
     outline: none;
     border: 0.2rem solid silver;
-    // padding-top: 0.4rem;
     padding-left: 1rem;
     margin-right: 1rem;
     border-radius: 0.4rem;
@@ -124,7 +120,7 @@ html {
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   html {
     font-size: 0.4rem;
   }
